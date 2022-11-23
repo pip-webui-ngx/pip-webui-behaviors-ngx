@@ -1,0 +1,29 @@
+<p>
+  <strong>Draggable</strong> - {{ 'EXAMPLES.DRAGGABLE_DESCRIPTION' | translate }}.
+</p>
+
+<mat-card class="drag-scroll layout-column flex">
+  <mat-card-content class="scroll-card">
+    <div class="drag-scroll-test"
+         style="height: 600px">
+      <div *ngFor="let obj of content; let i = index"
+           [scrollContainer]="'.drag-scroll-test'"
+           pipDrop="true"
+           pipDrag="true"
+           [dragData]="obj"
+           forceTouch="true"
+           touchDelay="100"
+           (dropSuccess)="onDropSuccess($event, i)"
+           (dragStart)="onDragStart($event, i)"
+           (dragStop)="onDragStop($event)"
+           (dragMove)="onDragMove($event)"
+           (enter)="onEnter($event, i)"
+           [ngClass]="{'virtual': obj.virtual}">
+        <div class="content"
+             [ngStyle]="obj.color">
+          <p>{{ obj.name }}</p>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

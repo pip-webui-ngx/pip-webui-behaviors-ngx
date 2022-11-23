@@ -1,0 +1,105 @@
+@use '@angular/material' as mat;
+@import 'pip-webui2-themes/styles.scss';
+@include mat.core();
+@mixin location-edit-mixin($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    :host .mat-card.item {
+        background-color: mat.get-color-from-palette($foreground, divider);
+    }
+}
+
+.unicorn-dark-theme {
+    @include location-edit-mixin($dark-theme);
+}
+
+.candy-theme {
+    @include location-edit-mixin($candy-app-theme);
+}
+
+.pip-blue-theme {
+    @include location-edit-mixin($pip-blue-theme);
+}
+
+.pip-grey-theme {
+    @include location-edit-mixin($pip-grey-theme);
+}
+
+.pip-navy-theme {
+    @include location-edit-mixin($pip-navy-theme);
+}
+
+.pip-amber-theme {
+    @include location-edit-mixin($pip-amber-theme);
+}
+
+.pip-green-theme {
+    @include location-edit-mixin($pip-green-theme);
+}
+
+.pip-orange-theme {
+    @include location-edit-mixin($pip-orange-theme);
+}
+
+.pip-pink-theme {
+    @include location-edit-mixin($pip-pink-theme);
+}
+
+.pip-dark-theme {
+    @include location-edit-mixin($pip-dark-theme);
+}
+
+.pip-black-theme {
+    @include location-edit-mixin($pip-black-theme);
+}
+
+.bootbarn-warm-theme {
+    @include location-edit-mixin($bootbarn-warm-theme);
+}
+
+.bootbarn-cool-theme {
+    @include location-edit-mixin($bootbarn-cool-theme);
+}
+
+.bootbarn-mono-theme {
+    @include location-edit-mixin($bootbarn-mono-theme);
+}
+
+.mat-card {
+    padding: 0;
+}
+
+.app-infinite-scroll {
+    overflow-y: auto;
+    height: 500px;
+    overflow-x: hidden;
+}
+
+.app-infinite-scroll .item-container {
+    width: 680px;
+    margin: 0 auto;
+}
+
+.app-infinite-scroll .item {
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+}
+
+.p24-flex {
+    padding: 24px;
+}
+
+.p0 {
+    padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .p24-flex {
+        padding: 16px;
+    }
+}

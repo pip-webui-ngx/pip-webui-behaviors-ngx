@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+@import 'pip-webui2-themes/variables';
+
+.pip-selected {
+    height: 300px;
+}
+
+.mat-nav-list {
+    padding-top: 0;
+}
+
+@mixin hotkeys-example-mixin($theme) {
+    $primary: map-get($theme, primary);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    :host {
+        .raised-bg {
+            background-color: mat.get-color-from-palette($background, 'disabled-button');
+        }
+        .raised-fg {
+            color: mat.get-color-from-palette($primary);
+        }
+    }
+}
+
+@each $class, $theme in $themes {
+    .#{$class} {
+        @include hotkeys-example-mixin($theme);
+    }
+}

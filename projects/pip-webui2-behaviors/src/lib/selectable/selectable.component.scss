@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+@import '~pip-webui2-themes/variables';
+@mixin selectable-mixin($theme) {
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
+    :host {
+        ::ng-deep .pip-selectable {
+            width: 100%;
+            max-width: 100%;
+            &.pip-selected-item {
+                border-left: 3px solid mat.get-color-from-palette($primary);
+                background-color: mat.get-color-from-palette($background, 'app-bar');
+                color: mat.get-color-from-palette($foreground, text);
+                .mat-list-item-content {
+                    padding-left: 13px;
+                }
+            }
+        }
+    }
+}
+
+@each $class, $theme in $themes {
+    .#{$class} {
+        @include selectable-mixin($theme);
+    }
+}
+
+:host {
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    ::ng-deep .pip-selectable.pip-selected-item {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+}

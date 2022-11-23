@@ -1,0 +1,58 @@
+<p>
+  <strong><code>pip-selectable</code> and <code>pipSelectable</code></strong> -
+  {{ 'EXAMPLES.SELECTABLE_DESCRIPTION' | translate }}.
+</p>
+
+<p>
+  <mat-checkbox color="primary" (change)="changeDisabled($event.checked)">
+    {{ 'EXAMPLES.SELECTED.DISABLED' | translate }}
+  </mat-checkbox>
+  <br />
+  <mat-form-field>
+    <button mat-button matPrefix mat-icon-button (click)="restricted = !restricted">
+      <mat-icon>{{ restricted ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+    </button>
+    <input matInput type="number" [placeholder]="'EXAMPLES.SELECTED.RESTRICTED' | translate" [(ngModel)]="height">
+  </mat-form-field>
+</p>
+<pip-selectable (selected)="selected($event)" [resolver]="resolver">
+  <mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let item of items" pipSelectable (keypress)="keypress()">
+      {{ item.title }}
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-nav-list>
+</pip-selectable>
+
+<div [ngStyle]="{'height': restricted ? (height || 200)  + 'px' : 'auto', 'overflow': restricted ? 'auto' : 'unset'}">
+  <pip-selectable (selected)="selected($event)" [index]="selectedIndex" [resolver]="resolver">
+    <mat-nav-list>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of items" pipSelectable (keypress)="keypress()">
+        {{ item.title }}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </pip-selectable>
+</div>
+
+<button mat-button (click)="setCreateState()">Set create state</button>
+<button mat-button (click)="finishCreate()">Finish create</button>
+<button mat-button (click)="indexLoop()">Next index</button>
+
+<pip-selectable (selected)="select($event)" [index]="selectedIndex$ | async">
+  <mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngIf="(state$ | async) === 'create'" pipSelectable>
+      <div matLine>New item</div>
+    </mat-list-item>
+    <mat-list-item *ngFor="let item of pg_items" pipSelectable [pipSelectableValue]="item">
+      {{ item.title }}
+      <button mat-icon-button matSuffix (click)="removeItem(item)">
+        <mat-icon>remove</mat-icon>
+      </button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-nav-list>
+</pip-selectable>
