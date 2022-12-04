@@ -1,0 +1,7 @@
+@use 'node_modules/@angular/material' as mat;
+@use 'node_modules/pip-webui-themes-ngx/themes/pip/candy' as pip-candy;
+@use '../theme-base' as base;
+
+$config: pip-candy.create-theme();
+
+@include base.create-theme($config);

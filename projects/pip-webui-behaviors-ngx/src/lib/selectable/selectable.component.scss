@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+
+:host {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+
+  ::ng-deep .pip-selectable.pip-selected-item {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+}

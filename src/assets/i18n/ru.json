@@ -1,0 +1,37 @@
+{
+  "title": "Behaviors",
+  "en": "Английский",
+  "press": "Нажмите",
+  "ru": "Русский",
+  "examples": {
+    "draggable": {
+      "description": "реализация функции перетаскивания (drag & drop)",
+      "title": "Draggable"
+    },
+    "focused": {
+      "description": "позволяет перемещаться по фокусируемым элементам управления с помощью клавиш со стрелками",
+      "focusable_element": "Фокусируемый элемент",
+      "title": "Focused",
+      "to_change_focusable_elements": "кнопки для переключения между фокусируемыми элементами списка",
+      "to_choose_card": "для выбора списка и"
+    },
+    "hotkeys": {
+      "change_background": "Сменить цвет фона",
+      "change_foreground": "Сменить цвет текста",
+      "description": "позволяет настроить локальные и глобальные горячие клавиши",
+      "language_change": "Сменить язык",
+      "state_change": "Сменить состояние",
+      "title": "Hotkeys"
+    },
+    "infinite-scroll": {
+      "description": "позволяет загружать данные частями во время прокрутки пользователя",
+      "title": "Infinite scroll"
+    },
+    "selectable": {
+      "description": "позволяет выбирать элементы",
+      "disabled": "Запретить смену элемента на нечетные",
+      "restricted": "Ограничить высоту",
+      "title": "Selectable"
+    }
+  }
+}

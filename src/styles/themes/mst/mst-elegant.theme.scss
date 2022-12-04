@@ -1,0 +1,7 @@
+@use 'node_modules/@angular/material' as mat;
+@use 'node_modules/pip-webui-themes-ngx/themes/mst/elegant' as mst-elegant;
+@use '../theme-base' as base;
+
+$config: mst-elegant.create-theme();
+
+@include base.create-theme($config);

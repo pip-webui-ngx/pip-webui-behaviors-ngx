@@ -18,11 +18,11 @@
       "dom"
     ],
     "paths": {
-      "pip-webui2-behaviors": [
-        "dist/pip-webui2-behaviors"
+      "pip-webui-behaviors-ngx": [
+        "dist/pip-webui-behaviors-ngx"
       ],
-      "pip-webui2-behaviors/*": [
-        "dist/pip-webui2-behaviors/*"
+      "pip-webui-behaviors-ngx/*": [
+        "dist/pip-webui-behaviors-ngx/*"
       ]
     }
   }

@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipInfiniteScrollModule } from 'pip-webui2-behaviors';
+import { TranslocoTestingModule } from '@ngneat/transloco';
+import { PipInfiniteScrollModule } from 'pip-webui-behaviors-ngx';
 
 import { InfiniteScrollExampleComponent } from './infinite-scroll-example.component';
 
@@ -13,15 +13,8 @@ describe('InfiniteScrollExampleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [InfiniteScrollExampleComponent],
-      imports: [
-        CommonModule,
-        MatCardModule,
-        TranslateModule.forRoot(),
-
-        PipInfiniteScrollModule
-      ],
-    })
-      .compileComponents();
+      imports: [CommonModule, MatCardModule, TranslocoTestingModule, PipInfiniteScrollModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

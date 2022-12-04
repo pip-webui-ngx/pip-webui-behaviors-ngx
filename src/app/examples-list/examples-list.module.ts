@@ -8,14 +8,8 @@ import { RouterModule } from '@angular/router';
 import { ExamplesListComponent } from './examples-list.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    FormsModule,
-    MatListModule,
-    RouterModule
-  ],
+  imports: [CommonModule, FlexLayoutModule, FormsModule, MatListModule, RouterModule],
   declarations: [ExamplesListComponent],
-  exports: [ExamplesListComponent]
+  exports: [ExamplesListComponent],
 })
-export class ExamplesListModule { }
+export class ExamplesListModule {}

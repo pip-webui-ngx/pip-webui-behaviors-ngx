@@ -14,15 +14,8 @@ describe('ExamplesListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ExamplesListComponent],
-      imports: [
-        CommonModule,
-        FlexLayoutModule,
-        FormsModule,
-        MatListModule,
-        RouterModule
-      ]
-    })
-      .compileComponents();
+      imports: [CommonModule, FlexLayoutModule, FormsModule, MatListModule, RouterModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

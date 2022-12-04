@@ -1,19 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipDraggableModule } from 'pip-webui2-behaviors';
-
+import { TranslocoModule } from '@ngneat/transloco';
+import { PipDraggableModule } from 'pip-webui-behaviors-ngx';
 import { DraggableExampleComponent } from './draggable-example.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatCardModule,
-    TranslateModule.forChild(),
-
-    PipDraggableModule
-  ],
-  declarations: [DraggableExampleComponent]
+  imports: [CommonModule, MatCardModule, TranslocoModule, PipDraggableModule],
+  declarations: [DraggableExampleComponent],
 })
-export class DraggableExampleModule { }
+export class DraggableExampleModule {}

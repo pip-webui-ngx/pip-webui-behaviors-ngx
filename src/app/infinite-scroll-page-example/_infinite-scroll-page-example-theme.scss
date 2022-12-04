@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material' as mat;
+
+@mixin color($config) {
+  $background: map-get($config, background);
+  $foreground: map-get($config, foreground);
+  .pip-infinite-scroll-page-example .mat-card.item {
+    background-color: mat.get-color-from-palette($foreground, divider);
+  }
+}
+
+@mixin typography($config-or-theme) {
+}
+
+@mixin _density($config-or-theme) {
+}
+
+@mixin theme($theme-or-color-config) {
+  $theme: mat.private-legacy-get-theme($theme-or-color-config);
+  @include mat.private-check-duplicate-theme-styles($theme, 'infinite-scroll-page-example') {
+    $color: mat.get-color-config($theme);
+    $density: mat.get-density-config($theme);
+    $typography: mat.get-typography-config($theme);
+
+    @if $color != null {
+      @include color($color);
+    }
+    @if $density != null {
+      @include _density($density);
+    }
+    @if $typography != null {
+      @include typography($typography);
+    }
+  }
+}

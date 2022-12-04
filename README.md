@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**pip-webui2-behaviors** module contains behaviors that can be attached to existing controls or pages
+**pip-webui-behaviors-ngx** module contains behaviors that can be attached to existing controls or pages
 
 ### Focusable
 
@@ -24,8 +24,8 @@ To make the div orange by pressing arrow buttons
 
 **More generalized example on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-behaviors/raw/master/doc/images/focused.png" style="display: block; text-align: center;">
-    <img style="max-width: 300px" src="https://github.com/pip-webui2/pip-webui2-behaviors/raw/master/doc/images/focused.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-behaviors-ngx/raw/master/doc/images/focused.png" style="display: block; text-align: center;">
+    <img style="max-width: 300px" src="https://github.com/pip-webui2/pip-webui-behaviors-ngx/raw/master/doc/images/focused.png"/>
 </a>
 
 
@@ -47,8 +47,8 @@ To make the div orange by pressing arrow buttons
 
 **Example of selected component with using angular-material mat-nav-list on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-behaviors/raw/master/doc/images/selected.png" style="display: block; text-align: center;">
-    <img style="max-width: 300px" src="https://github.com/pip-webui2/pip-webui2-behaviors/raw/master/doc/images/selected.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-behaviors-ngx/raw/master/doc/images/selected.png" style="display: block; text-align: center;">
+    <img style="max-width: 300px" src="https://github.com/pip-webui2/pip-webui-behaviors-ngx/raw/master/doc/images/selected.png"/>
 </a>
 
 ### Draggable
@@ -122,8 +122,8 @@ Styles:
 
 **Result on the image**
 
-<a href="https://github.com/pip-webui2/pip-webui2-behaviors/raw/master/doc/images/draggable.png" style="display: block; text-align: center;">
-    <img style="max-width: 300px" src="https://github.com/pip-webui2/pip-webui2-behaviors/raw/master/doc/images/draggable.png"/>
+<a href="https://github.com/pip-webui2/pip-webui-behaviors-ngx/raw/master/doc/images/draggable.png" style="display: block; text-align: center;">
+    <img style="max-width: 300px" src="https://github.com/pip-webui2/pip-webui-behaviors-ngx/raw/master/doc/images/draggable.png"/>
 </a>
 
 ### Infinite Scroll
@@ -167,7 +167,7 @@ generateItems(count) {
 To install this module using npm:
 
 ```bash
-npm install pip-webui2-behaviors --save
+npm install pip-webui-behaviors-ngx --save
 ```
 
 ## <a name="license"></a>License

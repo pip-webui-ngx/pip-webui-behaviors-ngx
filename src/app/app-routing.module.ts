@@ -9,19 +9,17 @@ import { SelectableExampleComponent } from './selectable-example/selectable-exam
 import { HotkeysExampleComponent } from './hotkeys-example/hotkeys-example.component';
 
 const appRoutes: Routes = [
-    { path: 'selectable', component: SelectableExampleComponent },
-    { path: 'focused', component: FocusedExampleComponent },
-    { path: 'infinite_scroll', component: InfiniteScrollExampleComponent },
-    { path: 'infinite_page', component: InfiniteScrollPageExampleComponent },
-    { path: 'draggable', component: DraggableExampleComponent },
-    { path: 'hotkeys', component: HotkeysExampleComponent },
-    { path: '**', redirectTo: 'selectable' },
+  { path: 'selectable', component: SelectableExampleComponent },
+  { path: 'focused', component: FocusedExampleComponent },
+  { path: 'infinite_scroll', component: InfiniteScrollExampleComponent },
+  { path: 'infinite_page', component: InfiniteScrollPageExampleComponent },
+  { path: 'draggable', component: DraggableExampleComponent },
+  { path: 'hotkeys', component: HotkeysExampleComponent },
+  { path: '**', redirectTo: 'selectable' },
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(appRoutes)
-    ],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

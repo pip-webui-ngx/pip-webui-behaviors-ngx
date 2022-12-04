@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material' as mat;
+@use 'examples-list/examples-list-theme';
+@use 'hotkeys-example/hotkeys-example-theme';
+@use 'infinite-scroll-example/infinite-scroll-example-theme';
+@use 'infinite-scroll-page-example/infinite-scroll-page-example-theme';
+
+@mixin theme($theme-or-color-config) {
+  $theme: mat.private-legacy-get-theme($theme-or-color-config);
+  @include mat.private-check-duplicate-theme-styles($theme, 'pip-webui-behaviors-ngx') {
+    @include examples-list-theme.theme($theme-or-color-config);
+    @include hotkeys-example-theme.theme($theme-or-color-config);
+    @include infinite-scroll-example-theme.theme($theme-or-color-config);
+    @include infinite-scroll-page-example-theme.theme($theme-or-color-config);
+  }
+}

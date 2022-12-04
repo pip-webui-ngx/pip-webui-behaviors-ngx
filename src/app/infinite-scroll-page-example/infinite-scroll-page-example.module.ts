@@ -1,19 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipInfiniteScrollModule } from 'pip-webui2-behaviors';
+import { TranslocoModule } from '@ngneat/transloco';
+import { PipInfiniteScrollModule } from 'pip-webui-behaviors-ngx';
 
 import { InfiniteScrollPageExampleComponent } from './infinite-scroll-page-example.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatCardModule,
-    TranslateModule.forChild(),
-
-    PipInfiniteScrollModule
-  ],
-  declarations: [InfiniteScrollPageExampleComponent]
+  imports: [CommonModule, MatCardModule, TranslocoModule, PipInfiniteScrollModule],
+  declarations: [InfiniteScrollPageExampleComponent],
 })
-export class InfiniteScrollPageExampleModule { }
+export class InfiniteScrollPageExampleModule {}

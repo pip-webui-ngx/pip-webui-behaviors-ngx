@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/pip-webui-behaviors-ngx",
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  },
+  "allowedNonPeerDependencies": ["lodash-es", "mousetrap"],
+  "assets": [
+    {
+      "input": "src",
+      "glob": "**/*.scss",
+      "output": ""
+    }
+  ]
+}

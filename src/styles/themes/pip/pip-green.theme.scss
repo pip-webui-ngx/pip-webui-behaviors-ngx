@@ -1,0 +1,7 @@
+@use 'node_modules/@angular/material' as mat;
+@use 'node_modules/pip-webui-themes-ngx/themes/pip/green' as pip-green;
+@use '../theme-base' as base;
+
+$config: pip-green.create-theme();
+
+@include base.create-theme($config);

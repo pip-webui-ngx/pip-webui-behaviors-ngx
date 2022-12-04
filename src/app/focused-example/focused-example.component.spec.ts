@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipFocusedModule } from 'pip-webui2-behaviors';
+import { TranslocoTestingModule } from '@ngneat/transloco';
+import { PipFocusedModule } from 'pip-webui-behaviors-ngx';
 
 import { FocusedExampleComponent } from './focused-example.component';
 
@@ -24,12 +24,11 @@ describe('FocusedExampleComponent', () => {
         MatToolbarModule,
         MatCardModule,
         MatIconModule,
-        TranslateModule.forRoot(),
+        TranslocoTestingModule,
 
-        PipFocusedModule
+        PipFocusedModule,
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

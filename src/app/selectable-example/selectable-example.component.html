@@ -1,35 +1,35 @@
 <p>
   <strong><code>pip-selectable</code> and <code>pipSelectable</code></strong> -
-  {{ 'EXAMPLES.SELECTABLE_DESCRIPTION' | translate }}.
+  {{ 'examples.selectable.description' | transloco }}.
 </p>
 
 <p>
   <mat-checkbox color="primary" (change)="changeDisabled($event.checked)">
-    {{ 'EXAMPLES.SELECTED.DISABLED' | translate }}
+    {{ 'examples.selectable.disabled' | transloco }}
   </mat-checkbox>
-  <br />
+  <br/>
   <mat-form-field>
     <button mat-button matPrefix mat-icon-button (click)="restricted = !restricted">
       <mat-icon>{{ restricted ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
     </button>
-    <input matInput type="number" [placeholder]="'EXAMPLES.SELECTED.RESTRICTED' | translate" [(ngModel)]="height">
+    <input matInput type="number" [placeholder]="'examples.selectable.restricted' | transloco" [(ngModel)]="height"/>
   </mat-form-field>
 </p>
 <pip-selectable (selected)="selected($event)" [resolver]="resolver">
   <mat-nav-list>
     <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let item of items" pipSelectable (keypress)="keypress()">
+    <mat-list-item *ngFor="let item of items" pipSelectable>
       {{ item.title }}
     </mat-list-item>
     <mat-divider></mat-divider>
   </mat-nav-list>
 </pip-selectable>
 
-<div [ngStyle]="{'height': restricted ? (height || 200)  + 'px' : 'auto', 'overflow': restricted ? 'auto' : 'unset'}">
+<div [ngStyle]="{ height: restricted ? (height || 200) + 'px' : 'auto', overflow: restricted ? 'auto' : 'unset' }">
   <pip-selectable (selected)="selected($event)" [index]="selectedIndex" [resolver]="resolver">
     <mat-nav-list>
       <mat-divider></mat-divider>
-      <mat-list-item *ngFor="let item of items" pipSelectable (keypress)="keypress()">
+      <mat-list-item *ngFor="let item of items" pipSelectable>
         {{ item.title }}
       </mat-list-item>
       <mat-divider></mat-divider>
@@ -41,10 +41,11 @@
 <button mat-button (click)="finishCreate()">Finish create</button>
 <button mat-button (click)="indexLoop()">Next index</button>
 
-<pip-selectable (selected)="select($event)" [index]="selectedIndex$ | async">
+<pip-selectable (selected)="select($event)" *ngIf="state$ | async as state" [index]="selectedIndex$ | async"
+                [resolver]="state === 'create' ? preventResolver : null">
   <mat-nav-list>
     <mat-divider></mat-divider>
-    <mat-list-item *ngIf="(state$ | async) === 'create'" pipSelectable>
+    <mat-list-item *ngIf="state === 'create'" pipSelectable>
       <div matLine>New item</div>
     </mat-list-item>
     <mat-list-item *ngFor="let item of pg_items" pipSelectable [pipSelectableValue]="item">

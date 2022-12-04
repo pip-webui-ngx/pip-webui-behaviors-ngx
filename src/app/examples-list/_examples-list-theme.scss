@@ -1,0 +1,41 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material' as mat;
+
+@mixin color($config) {
+  $background: map-get($config, background);
+
+  .pip-examples-list {
+    .mat-list-item:focus {
+      background-color: transparent;
+    }
+
+    .mat-list-item.selected {
+      background-color: map.get($background, hover);
+    }
+  }
+}
+
+@mixin typography($config-or-theme) {
+}
+
+@mixin _density($config-or-theme) {
+}
+
+@mixin theme($theme-or-color-config) {
+  $theme: mat.private-legacy-get-theme($theme-or-color-config);
+  @include mat.private-check-duplicate-theme-styles($theme, 'examples-list') {
+    $color: mat.get-color-config($theme);
+    $density: mat.get-density-config($theme);
+    $typography: mat.get-typography-config($theme);
+
+    @if $color != null {
+      @include color($color);
+    }
+    @if $density != null {
+      @include _density($density);
+    }
+    @if $typography != null {
+      @include typography($typography);
+    }
+  }
+}

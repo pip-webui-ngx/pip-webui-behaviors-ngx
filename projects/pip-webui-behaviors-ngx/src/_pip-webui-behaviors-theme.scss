@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use 'node_modules/@angular/material' as mat;
+@use 'lib/selectable/selectable-theme';
+
+@mixin theme($theme-or-color-config) {
+  $theme: mat.private-legacy-get-theme($theme-or-color-config);
+  @include mat.private-check-duplicate-theme-styles($theme, 'pip-webui-behaviors') {
+    @include selectable-theme.theme($theme-or-color-config);
+  }
+}
+

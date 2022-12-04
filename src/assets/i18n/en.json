@@ -1,0 +1,37 @@
+{
+  "title": "Behaviors",
+  "en": "English",
+  "press": "Press",
+  "ru": "Russian",
+  "examples": {
+    "draggable": {
+      "description": "implements drag & drop functionality",
+      "title": "Draggable"
+    },
+    "focused": {
+      "description": "allows to navigate over focusable controls using arrow keys",
+      "focusable_element": "Focusable element",
+      "title": "Focused",
+      "to_change_focusable_elements": "buttons to change focusable elements in list",
+      "to_choose_card": "to choose list and"
+    },
+    "hotkeys": {
+      "change_background": "Change background",
+      "change_foreground": "Change foreground",
+      "description": "allows you to configure local and global hotkeys",
+      "language_change": "Change language",
+      "state_change": "Change state",
+      "title": "Hotkeys"
+    },
+    "infinite-scroll": {
+      "description": "allows to upload data in chunks while user is scrolling",
+      "title": "Infinite scroll"
+    },
+    "selectable": {
+      "description": "allows to select elements",
+      "disabled": "Disable selection of odd elements",
+      "restricted": "Restrict height",
+      "title": "Selectable"
+    }
+  }
+}

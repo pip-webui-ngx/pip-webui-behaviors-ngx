@@ -1,48 +1,27 @@
-examples-list {
-    width: 300px;
-}
+:host {
+  .mat-sidenav-container {
+    height: calc(100% - 64px);
 
-.content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
+    .mat-sidenav-content {
+      display: flex;
+      flex-direction: column;
 
-    overflow: hidden
-}
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: auto;
 
-::ng-deep color-picker-example, ::ng-deep empty-state-example {
-    flex: 1 1 100%;
-    padding: 16px;
-}
-
-::ng-deep .mat-toolbar .mat-select-value {
-    color: #fff !important;
-    text-align: end !important;
-}
-
-::ng-deep .mat-form-field-underline {
-    display: none !important;
-}
-
-::ng-deep .mat-input-infix {
-    width: 200px;
-}
-
-.pointer {
-    cursor: default;
-}
-
-.router {
-    display: block;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 16px;
-    font-family: Roboto;
-}
-
-.example-appbar {
-    z-index: 10;
-    position: relative;
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 700px;
+        }
+      }
+    }
+  }
 }

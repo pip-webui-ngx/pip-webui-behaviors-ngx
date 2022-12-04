@@ -1,35 +1,28 @@
 import { Component } from '@angular/core';
+import { MainService } from '../services/main.service';
 
 @Component({
   selector: 'app-focused-example',
   templateUrl: './focused-example.component.html',
-  styleUrls: ['./focused-example.component.scss']
+  styleUrls: ['./focused-example.component.scss'],
 })
 export class FocusedExampleComponent {
-
-  constructor() { }
-
-  public collection = [
+  collection = [
     {
       id: 1,
-      text: '1'
+      text: '1',
     },
     {
       id: 2,
-      text: '2'
+      text: '2',
     },
     {
       id: 3,
-      text: '4'
+      text: '4',
     },
   ];
 
-  public remove() {
-    this.collection.splice(0, 1);
+  constructor(private mainService: MainService) {
+    this.mainService.breadcrumbs = [this.mainService.breadcrumbs[0], { title: 'examples.focused.title' }];
   }
-
-  public add() {
-    this.collection.push({ id: 57, text: '' });
-  }
-
 }

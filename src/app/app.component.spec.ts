@@ -8,8 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipThemesModule } from 'pip-webui2-themes';
+import { PipThemesModule } from 'pip-webui-themes-ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,9 +22,7 @@ import { SelectableExampleModule } from './selectable-example/selectable-example
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
       imports: [
         NoopAnimationsModule,
         FlexLayoutModule,
@@ -37,8 +34,6 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatToolbarModule,
 
-        TranslateModule.forRoot(),
-
         PipThemesModule.forRoot(),
 
         AppRoutingModule,
@@ -48,7 +43,7 @@ describe('AppComponent', () => {
         InfiniteScrollExampleModule,
         InfiniteScrollPageExampleModule,
         DraggableExampleModule,
-      ]
+      ],
     }).compileComponents();
   }));
   it('should create the app', async(() => {

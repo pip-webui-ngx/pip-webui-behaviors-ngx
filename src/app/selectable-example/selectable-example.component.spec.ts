@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipSelectableModule } from 'pip-webui2-behaviors';
+import { TranslocoTestingModule } from '@ngneat/transloco';
+import { PipSelectableModule } from 'pip-webui-behaviors-ngx';
 
 import { SelectableExampleComponent } from './selectable-example.component';
 
@@ -13,15 +13,8 @@ describe('SelectedExampleComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SelectableExampleComponent],
-      imports: [
-        CommonModule,
-        MatListModule,
-        TranslateModule.forRoot(),
-
-        PipSelectableModule
-      ],
-    })
-      .compileComponents();
+      imports: [CommonModule, MatListModule, TranslocoTestingModule, PipSelectableModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

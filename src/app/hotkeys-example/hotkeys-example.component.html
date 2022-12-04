@@ -1,23 +1,15 @@
-<p [ngClass]="{'raised-bg': raisedBg, 'raised-fg': raisedFg}">
-  <strong>Hotkeys</strong> - {{ 'EXAMPLES.HOTKEYS_DESCRIPTION' | translate }}.
+<p [ngClass]="{ 'raised-bg': raisedBg, 'raised-fg': raisedFg }">
+  <strong>Hotkeys</strong> - {{ 'examples.hotkeys.description' | transloco }}.
 </p>
 <dl>
-  <dd>
-    Ctrl+Alt+L
-  </dd>
-  <dt>{{'EXAMPLES.HOTKEYS.LANGUAGE_CHANGE' | translate}}</dt>
-  <dd>
-    Ctrl+Altt+F
-  </dd>
-  <dt>{{'EXAMPLES.HOTKEYS.STATE_CHANGE' | translate}}</dt>
+  <dd>Ctrl+Alt+L</dd>
+  <dt>{{ 'examples.hotkeys.language_change' | transloco }}</dt>
+  <dd>Ctrl+Altt+F</dd>
+  <dt>{{ 'examples.hotkeys.state_change' | transloco }}</dt>
 </dl>
 <dl>
-  <dd>
-    Alt+H
-  </dd>
-  <dt>{{'EXAMPLES.HOTKEYS.CHANGE_BACKGROUND' | translate}}</dt>
-  <dd>
-    Alt+.
-  </dd>
-  <dt>{{'EXAMPLES.HOTKEYS.CHANGE_FOREGROUND' | translate}}</dt>
+  <dd>Alt+H</dd>
+  <dt>{{ 'examples.hotkeys.change_background' | transloco }}</dt>
+  <dd>Alt+.</dd>
+  <dt>{{ 'examples.hotkeys.change_foreground' | transloco }}</dt>
 </dl>

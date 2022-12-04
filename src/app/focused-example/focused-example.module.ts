@@ -5,8 +5,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
-import { PipFocusedModule } from 'pip-webui2-behaviors';
+import { TranslocoModule } from '@ngneat/transloco';
+import { PipFocusedModule } from 'pip-webui-behaviors-ngx';
 
 import { FocusedExampleComponent } from './focused-example.component';
 
@@ -18,10 +18,10 @@ import { FocusedExampleComponent } from './focused-example.component';
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    TranslateModule.forChild(),
+    TranslocoModule,
 
-    PipFocusedModule
+    PipFocusedModule,
   ],
-  declarations: [FocusedExampleComponent]
+  declarations: [FocusedExampleComponent],
 })
-export class FocusedExampleModule { }
+export class FocusedExampleModule {}
