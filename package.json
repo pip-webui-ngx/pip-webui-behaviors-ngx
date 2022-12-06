@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng build pip-webui-behaviors-ngx",
+    "build:lib": "ng build pip-webui-behaviors-ngx --configuration production && cd ./dist/pip-webui-behaviors-ngx && npm pack",
     "format:check": "prettier --config .\\.prettierrc --list-different \"{projects,src/{app,environments,assets}}/**/*{.ts,.js,.html,.json,.css,.scss}\"",
     "format:fix": "prettier --config .\\.prettierrc --write \"{projects,src/{app,environments,assets}}/**/*{.ts,.js,.html,.json,.css,.scss}\"",
     "test": "ng test",

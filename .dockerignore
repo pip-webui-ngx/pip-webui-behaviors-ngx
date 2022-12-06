@@ -1,0 +1,7 @@
+.vscode
+.git
+.gitignore
+.dockerignore
+docker/Dockerfile*
+*.ps1
+node_modules
