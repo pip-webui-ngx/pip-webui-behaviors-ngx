@@ -1,18 +1,16 @@
 {
   "name": "pip-webui-behaviors-ngx",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/pip-webui-ngx/pip-webui-behaviors-ngx"
   },
   "dependencies": {
+    "@types/mousetrap": "^1.6.11",
     "lodash-es": "^4.17.21",
     "mousetrap": "^1.6.5",
     "tslib": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/mousetrap": "^1.6.11"
   },
   "peerDependencies": {
     "@angular/cdk": "^14.2.7",
