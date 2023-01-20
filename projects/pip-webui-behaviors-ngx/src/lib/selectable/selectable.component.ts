@@ -79,7 +79,7 @@ export class PipSelectableComponent implements OnDestroy, AfterViewInit {
   @ContentChildren(PipSelectableDirective, { descendants: true }) elements: QueryList<PipSelectableDirective>;
 
   constructor(private renderer: Renderer2, private elRef: ElementRef) {
-    this.renderer.addClass(elRef.nativeElement, 'pip-selectable');
+    this.renderer.addClass(elRef.nativeElement, 'pip-selectable-host');
     __ngRendererSetElementAttributeHelper(this.renderer, elRef.nativeElement, 'tabindex', '1');
     this.renderer.setStyle(elRef.nativeElement, 'outline', 'none');
   }
