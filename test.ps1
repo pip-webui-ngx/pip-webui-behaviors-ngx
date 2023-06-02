@@ -50,10 +50,11 @@ if (docker ps -q -a -f name=$container) {
 docker run --name $container $testImage /bin/sh -c $package.scripts."test:lib"
 
 # Check if test was successfull
+$containerExitCode = docker inspect $container --format='{{.State.ExitCode}}'
 $logs = docker logs $container
 docker rm $container
 $testResult = $logs[$logs.Count - 1]
-if ($testResult -notmatch "^TOTAL: [0-9]+ SUCCESS$") {
+if (($containerExitCode -ne 0) -or ($testResult -notmatch "^TOTAL: [0-9]+ SUCCESS$")) {
     Write-Error "Some test failed.`n$testResult"
 } else {
     Write-Host "All tests passed."
