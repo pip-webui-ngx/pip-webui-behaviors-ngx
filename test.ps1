@@ -26,7 +26,7 @@ if (-not (Test-Path -Path "$PSScriptRoot/docker/.npmrc")) {
 }
 
 # build docker image
-docker build -f "$PSScriptRoot/docker/Dockerfile.test" -t $testImage .
+docker build -f "$PSScriptRoot/docker/Dockerfile.test" -t $testImage $PSScriptRoot
 
 # Check if the build was successful
 if ($LastExitCode -ne 0) {
@@ -50,11 +50,11 @@ if (docker ps -q -a -f name=$container) {
 docker run --name $container $testImage /bin/sh -c $package.scripts."test:lib"
 
 # Check if test was successfull
-$ErrorActionPreference = "Continue"
-$logs = & docker logs $container 2>&1 | %{ "$_" }
-$ErrorActionPreference = "Error"
+$logs = docker logs $container
 docker rm $container
 $testResult = $logs[$logs.Count - 1]
 if ($testResult -notmatch "^TOTAL: [0-9]+ SUCCESS$") {
     Write-Error "Some test failed.`n$testResult"
+} else {
+    Write-Host "All tests passed."
 }

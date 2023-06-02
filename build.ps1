@@ -26,7 +26,7 @@ if (-not (Test-Path -Path "$PSScriptRoot/docker/.npmrc")) {
 }
 
 # build docker image
-docker build -f "$PSScriptRoot/docker/Dockerfile.build" -t $buildImage .
+docker build -f "$PSScriptRoot/docker/Dockerfile.build" -t $buildImage $PSScriptRoot
 
 # Check if the build was successful
 if ($LastExitCode -ne 0) {
