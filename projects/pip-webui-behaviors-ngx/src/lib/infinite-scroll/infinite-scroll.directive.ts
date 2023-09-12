@@ -4,9 +4,11 @@ import { Directive, ElementRef, OnDestroy, Input, Output, EventEmitter, Renderer
   selector: '[pipInfiniteScroll]',
 })
 export class PipInfiniteScrollDirective implements AfterViewInit, OnDestroy {
+  private useParent: boolean;
   private elSelector: string;
 
   @Input() set scrollParent(parent: boolean) {
+    this.useParent = !!parent;
     this.changeContainer(parent ? this.elRef.nativeElement.parentElement : this.elRef.nativeElement);
   }
 
@@ -61,7 +63,7 @@ export class PipInfiniteScrollDirective implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.changeContainer(
-      (this.elSelector && this.documentElement.querySelector(this.elSelector)) || this.elRef.nativeElement,
+      (this.elSelector && this.documentElement.querySelector(this.elSelector)) || (this.useParent ? this.elRef.nativeElement.parentElement : this.elRef.nativeElement),
     );
   }
 
