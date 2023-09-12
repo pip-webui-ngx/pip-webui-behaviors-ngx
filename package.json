@@ -10,7 +10,7 @@
     "format:check": "prettier --config .\\.prettierrc --list-different \"{projects,src/{app,environments,assets}}/**/*{.ts,.js,.html,.json,.css,.scss}\"",
     "format:fix": "prettier --config .\\.prettierrc --write \"{projects,src/{app,environments,assets}}/**/*{.ts,.js,.html,.json,.css,.scss}\"",
     "test": "ng test",
-    "test:lib": "ng test pip-webui-behaviors-ngx",
+    "test:lib": "ng test pip-webui-behaviors-ngx --browsers=ChromeHeadlessNoSandbox --watch=false --code-coverage=false",
     "lint": "ng lint",
     "lint:lib": "ng lint pip-webui-behaviors-ngx",
     "e2e": "ng e2e",

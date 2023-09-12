@@ -8,11 +8,12 @@ on:
     paths:
     - '**'
     - '!README.md'
+  workflow_dispatch:
 
 jobs:
   # Setup job
   setup:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: "!contains(github.event.head_commit.message, '[skip-ci]')"
 
     steps:
@@ -23,7 +24,8 @@ jobs:
       shell: bash
       run: |
         rm -rf script-delivery-ps
-        git clone ${{ secrets.SCRIPTS_DELIVERY_PS_GIT_URL }} script-delivery-ps
+        git clone ${{ secrets.SCRIPTS_DELIVERY_PS_GIT_URL }} eic-templates-cicd-ps
+        cp -r eic-templates-cicd-ps/script-delivery-ps script-delivery-ps
 
     - name: Execute increment script
       shell: bash
@@ -44,7 +46,7 @@ jobs:
   # Authoring job
   authoring:
     needs: setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout source code
